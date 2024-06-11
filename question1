@@ -1,0 +1,62 @@
+//java program for basic calculator based on user's input
+
+import java.util.Scanner;
+
+public class question1 {
+	public enum func  {
+		add ,sub,mul,div;
+		 public static func fromString(String symbol) {
+            switch (symbol) {
+                case "+":
+                    return add;
+                case "-":
+                    return sub;
+                case "*":
+                    return mul;
+                case "/":
+                    return div;
+                default:
+                    throw new IllegalArgumentException("Unknown operation: " + symbol);
+            }
+		};
+	}
+
+	public static void main(String[] args) {
+		func f;
+		Scanner sc = new Scanner(System.in);
+		int a = sc.nextInt();
+		int b = sc.nextInt();
+		 String input= sc.next();
+		 f = func.fromString(input);
+		 switch (f) {
+		 case add:
+		 {
+			 System.out.println( a+b);
+			 break;
+			 
+		 }
+		 case sub:
+		 {
+			 System.out.println(a-b);
+			 break;
+		 }
+		 case mul:
+		 {
+			 System.out.println(a*b);
+			 break;
+		 }
+		 case div:
+		 {
+			 System.out.println((a/b));
+			 break;
+		 }
+		 default:
+			 System.out.println("illegal operation");
+		 }
+		
+		
+		
+
+	}
+}
+
